@@ -1,0 +1,34 @@
+﻿@model FireGes.Models.Citacion
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Citacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCitacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaCitacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTipoCitacionNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdTipoCitacionNavigation.DescripcionTipoCitacion)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdCitacion" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

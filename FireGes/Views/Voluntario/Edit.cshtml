@@ -1,0 +1,75 @@
+﻿@model FireGes.Models.Voluntario
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>Voluntario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdVoluntario" />
+            <div class="form-group">
+                <label asp-for="IdCompania" class="control-label"></label>
+                <select asp-for="IdCompania" class="form-control" asp-items="ViewBag.IdCompania"></select>
+                <span asp-validation-for="IdCompania" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEstadoVoluntario" class="control-label"></label>
+                <select asp-for="IdEstadoVoluntario" class="form-control" asp-items="ViewBag.IdEstadoVoluntario"></select>
+                <span asp-validation-for="IdEstadoVoluntario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rut" class="control-label"></label>
+                <input asp-for="Rut" class="form-control" />
+                <span asp-validation-for="Rut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DigitoVerificador" class="control-label"></label>
+                <input asp-for="DigitoVerificador" class="form-control" />
+                <span asp-validation-for="DigitoVerificador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombres" class="control-label"></label>
+                <input asp-for="Nombres" class="form-control" />
+                <span asp-validation-for="Nombres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApellidoPaterno" class="control-label"></label>
+                <input asp-for="ApellidoPaterno" class="form-control" />
+                <span asp-validation-for="ApellidoPaterno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApellidoMaterno" class="control-label"></label>
+                <input asp-for="ApellidoMaterno" class="form-control" />
+                <span asp-validation-for="ApellidoMaterno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaNacimiento" class="control-label"></label>
+                <input asp-for="FechaNacimiento" class="form-control" />
+                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaIncorporacion" class="control-label"></label>
+                <input asp-for="FechaIncorporacion" class="form-control" />
+                <span asp-validation-for="FechaIncorporacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

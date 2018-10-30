@@ -1,0 +1,37 @@
+﻿@model FireGes.Models.Compania
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Compania</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DenominacionCompania)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DenominacionCompania)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreFantasia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombreFantasia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdCuerpoNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdCuerpoNavigation.Denominacion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdCompania">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

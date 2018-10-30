@@ -1,0 +1,84 @@
+﻿@model IEnumerable<FireGes.Models.Voluntario>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DigitoVerificador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidoPaterno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidoMaterno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaNacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaIncorporacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCompaniaNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEstadoVoluntarioNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DigitoVerificador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoPaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoMaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaIncorporacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCompaniaNavigation.DenominacionCompania)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEstadoVoluntarioNavigation.DescripcionEstadoVoluntario)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdVoluntario">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdVoluntario">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdVoluntario">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

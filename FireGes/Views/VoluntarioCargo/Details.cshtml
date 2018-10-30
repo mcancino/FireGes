@@ -1,0 +1,43 @@
+﻿@model FireGes.Models.VoluntarioCargo
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VoluntarioCargo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaTermino)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaTermino)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdCargoNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdCargoNavigation.DescripcionCargo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdVoluntarioNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdVoluntarioNavigation.IdVoluntario)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdVoluntarioCargo">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,49 @@
+﻿@model FireGes.Models.DireccionVoluntario
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DireccionVoluntario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Calle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Calle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Departamento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdComunaNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdComunaNavigation.NombreComuna)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdVoluntarioNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdVoluntarioNavigation.IdVoluntario)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdDireccionVoluntario">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
